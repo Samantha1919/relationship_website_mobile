@@ -6,6 +6,8 @@ import { fireworks,christmas } from '../assets';
 function Closing() {
   const navigate = useNavigate();
 
+  // page de fin avec le sapin et les feux d'artifice
+
   return (
     <div className="min-h-screen w-full bg-black/20 flex flex-col items-center justify-center">
       <div className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center">

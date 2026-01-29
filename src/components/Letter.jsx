@@ -5,6 +5,8 @@ import { ArrowLeft,ArrowRight } from "./icons";
 import { useNavigate } from 'react-router-dom'
 gsap.registerPlugin(CSSRulePlugin);
 
+// page avec la lettre
+
 function Letter() {
   const envelopeRef = useRef(null);
   const letterRef = useRef(null);

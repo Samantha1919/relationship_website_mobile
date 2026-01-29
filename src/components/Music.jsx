@@ -3,60 +3,25 @@ import { ArrowLeft } from "./icons";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { heavenly,sparks,brandy,bruno,greenday,kanye,sunsetz,souljaboy } from "../assets";
+import { kidCudi,lorenzo,smiths,billy,tvGirl,sheAndHim,sunsetz,booba } from "../assets";
 
 function Music() {
   const navigate = useNavigate();
-  // Customize and add your own songs
+  // je pourrais ajouter 1 propriété link qui mènerait sur la musique genre le clip ou autre
   const songs = [
     {
-      title: "Heavenly",
-      artist: "Cigarettes After Sex",
-      albumCover: heavenly, 
+      title: "Willing To Trust",
+      artist: "Kid Cudi",
+      albumCover: kidCudi, 
       left: "5%",
-      top: "5%",
+      top: "2%",
     },
     {
-      title: "The Boy Is Mine",
-      artist: "Brandy, Monica",
-      albumCover: brandy, 
+      title: "Back to the old house",
+      artist: "The Smiths",
+      albumCover: smiths, 
       left: "40%",
-      top: "15%",
-    },
-    {
-      title: "Die With A Smile",
-      artist: "Lady Gaga, Bruno Mars",
-      albumCover: bruno, 
-      left: '15%',
-      top: '40%',
-    },
-    {
-      title: "Last Night on Earth",
-      artist: "Green Day",
-      albumCover: greenday, 
-      left: '30%',
-      top: '75%',
-    },
-    {
-      title: "American Boy",
-      artist: "Estelle, Kanye West",
-      albumCover: kanye, 
-      left: '5%',
-      top: '65%',
-    },
-    {
-      title: "Sparks",
-      artist: "Coldplay",
-      albumCover: sparks, 
-      left: '25%',
-      top: '90%',
-    },
-    {
-      title: "Kiss Me Thru The Phone",
-      artist: "Soulja Boy, Sammie",
-      albumCover: souljaboy, 
-      left: '35%',
-      top: '50%',
+      top: "12s%",
     },
     {
       title: "Sunsetz",
@@ -64,6 +29,41 @@ function Music() {
       albumCover: sunsetz, 
       left: "10%",
       top: "25%",
+    },
+     {
+      title: "Scarface",
+      artist: "Booba",
+      albumCover: booba, 
+      left: '35%',
+      top: '38%',
+    },
+     {
+      title: "Eyes Without A Face",
+      artist: "Billy Idol",
+      albumCover: billy, 
+      left: '15%',
+      top: '50%',
+    },
+    {
+      title: "Loving Machine",
+      artist: "Tv Girl",
+      albumCover: tvGirl, 
+      left: '30%',
+      top: '63%',
+    },
+    {
+      title: "I thought i saw your face today",
+      artist: "She and Him",
+      albumCover: sheAndHim, 
+      left: '5%',
+      top: '74%',
+    },
+    {
+      title: "MBK Rocket",
+      artist: "Lorenzo",
+      albumCover: lorenzo, 
+      left: '25%',
+      top: '86%',
     },
   ];
   const containerRef = useRef(null);

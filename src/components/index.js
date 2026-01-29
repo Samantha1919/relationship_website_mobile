@@ -1,13 +1,15 @@
-import Passcode from './Passcode';
-import Question from './Question';
-import Timer from './Timer';
-import Recap from './Recap';
-import Letter from './Letter';
-import Closing from './Closing';
-import Music from './Music';
-import Picture from './Picture';
-import Message from './Message';
-import Carousel from './Carousel';
+import Passcode from "./Passcode";
+import Question from "./Question";
+import Timer from "./Timer";
+import Recap from "./Recap";
+import Letter from "./Letter";
+import Closing from "./Closing";
+import Music from "./Music";
+import Picture from "./Picture";
+import Message from "./Message";
+import Carousel from "./Carousel";
+
+// jsp a quoi ca sert
 
 export {
   Passcode,
@@ -19,5 +21,5 @@ export {
   Picture,
   Music,
   Carousel,
-  Message
-}
+  Message,
+};

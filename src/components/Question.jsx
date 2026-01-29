@@ -10,12 +10,13 @@ function Question() {
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
+
   // Customize your own Trending Searches
-  const trends = ['Why is my bf so cute?', 'Why does Rheina love him more?', `Rheina's birthdate (coz her bf forgets)`,]
+  const trends = ['Why is my bf so cute?', 'Why does Rheina love him more?', `Rheina's birthdate (coz her bf forgets)`, 'test']
 
   const handleSearch = (e) => {
     e.preventDefault()
-    if (searchQuery.toLowerCase() === 'how long have we been together?' || 'how long have we been together') {
+    if (searchQuery.toLowerCase() === 'how long have we been together?' || searchQuery.toLowerCase() === 'how long have we been together') { // ct tlt vrai avant mais quest ce ca change js plus
           navigate("/timer");
 
     }

@@ -62,7 +62,7 @@ function Passcode() {
             </div>
             )}
 
-            {/* Number Pad */}
+            {/* Les numéros sur le code */}
             <div className="grid grid-cols-3 gap-4 mb-8 max-w-full">
             {[
                 { num: 1 },
