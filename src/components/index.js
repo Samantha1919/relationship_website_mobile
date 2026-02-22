@@ -8,8 +8,7 @@ import Music from "./Music";
 import Picture from "./Picture";
 import Message from "./Message";
 import Carousel from "./Carousel";
-
-// jsp a quoi ca sert
+import Playground from "./Playground";
 
 export {
   Passcode,
@@ -22,4 +21,5 @@ export {
   Music,
   Carousel,
   Message,
+  Playground,
 };

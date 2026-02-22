@@ -9,6 +9,12 @@ import booba from "./booba.jpg";
 import kidCudi from "./kidCudi.jpg";
 import fireworks from "./fireworks.gif";
 import christmas from "./christmas.gif";
+import basket from "./basket.png";
+import kitkat from "./kitkat.png";
+import mochi from "./mochi.png";
+import macaron from "./macaron.png";
+import iceCream from "./ice-cream.png";
+import biscuit from "./biscuit.png";
 
 // page ou tu exportes les images avec juste un nom pour pouvoir les utiliser + facilement
 
@@ -24,4 +30,10 @@ export {
   smiths,
   sunsetz,
   lorenzo,
+  basket,
+  kitkat,
+  mochi,
+  macaron,
+  iceCream,
+  biscuit,
 };

@@ -21,7 +21,7 @@ function Music() {
       artist: "The Smiths",
       albumCover: smiths, 
       left: "40%",
-      top: "12s%",
+      top: "13%",
     },
     {
       title: "Sunsetz",
