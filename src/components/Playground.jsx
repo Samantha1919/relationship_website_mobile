@@ -1,14 +1,14 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import {
   basket,
   iceCream,
   biscuit,
-  mochi,
+  mochis,
   kitkat,
   macaron,
-  lorenzo,
-  kidCudi,
-  sunsetz,
+  dango,
+  mochi,
+  milk,
 } from "../assets";
 import { motion } from "motion/react";
 
@@ -21,60 +21,71 @@ function Playground() {
   const images = [
     {
       img: iceCream,
+      name: "ice cream",
       left: "5%",
       top: "2%",
     },
     {
       img: biscuit,
+      name: "biscuit",
       left: "20%",
       top: "73%",
     },
     {
-      img: mochi,
+      img: mochis,
+      name: "mochis",
       left: "10%",
       top: "25%",
     },
     {
       img: kitkat,
-      left: "65%",
+      name: "kitkat",
+      left: "75%",
       top: "38%",
     },
     {
       img: macaron,
+      name: "macaron",
       left: "15%",
       top: "60%",
     },
     {
-      img: lorenzo,
+      img: dango,
+      name: "dango",
       left: "70%",
       top: "63%",
     },
     {
-      img: kidCudi,
+      img: mochi,
+      name: "mochi",
       left: "65%",
       top: "74%",
     },
     {
-      img: sunsetz,
+      img: milk,
+      name: "milk",
       left: "85%",
       top: "67%",
     },
   ];
 
+  const name = images[Math.floor(Math.random() * images.length)].name;
+
   return (
-    <div className="max-h-screen bg-green-200 relative">
-      <h1 className="text-4xl font-bold mb-8 text-white text-center">
+    <div className="max-h-screen bg-[#fbf1fb] relative">
+      <h1 className="text-4xl font-bold mb-8 text-black text-center">
         Playground time !
       </h1>
 
+      <h2 className="text-center">Put the {name} in basket</h2>
+
       <div
         ref={containerRef}
-        className=" relative min-h-screen rounded-lg overflow-hidden mt-8 mb-12"
+        className="relative min-h-screen rounded-lg overflow-hidden mt-8 mb-12"
       >
-        <img
-          src={basket}
-          className="absolute top-[15%] left-[35%] w-[600px] h-[600px]"
-        />
+        <div className="flex justify-center mt-12">
+          <img src={basket} className=" w-[700px] h-[700px]" />
+        </div>
 
         {images.map((img, index) => (
           <motion.div
@@ -90,7 +101,7 @@ function Playground() {
             <img
               src={img.img}
               alt=""
-              className="rounded-md object-cover h-[100px] w-auto"
+              className="rounded-md object-cover h-[150px] w-auto"
               draggable="false" // on a mis ca pr dire quon veut pas deplacer limage mais la div qui est au dessus qui contient limage
             />
           </motion.div>

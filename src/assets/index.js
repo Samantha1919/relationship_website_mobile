@@ -11,10 +11,13 @@ import fireworks from "./fireworks.gif";
 import christmas from "./christmas.gif";
 import basket from "./basket.png";
 import kitkat from "./kitkat.png";
-import mochi from "./mochi.png";
+import mochis from "./mochis.png";
 import macaron from "./macaron.png";
 import iceCream from "./ice-cream.png";
 import biscuit from "./biscuit.png";
+import mochi from "./mochi.png";
+import dango from "./dango.png";
+import milk from "./milk.png";
 
 // page ou tu exportes les images avec juste un nom pour pouvoir les utiliser + facilement
 
@@ -32,8 +35,11 @@ export {
   lorenzo,
   basket,
   kitkat,
-  mochi,
+  mochis,
   macaron,
   iceCream,
   biscuit,
+  mochi,
+  dango,
+  milk,
 };
