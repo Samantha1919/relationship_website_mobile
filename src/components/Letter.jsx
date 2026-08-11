@@ -79,7 +79,7 @@ function Letter() {
         <div className="flex justify-between w-full p-6 mb-10">
           <button
             className="px-4 py-2 flex justify-center items-center bg-white/20 gap-2 hover:bg-white/30 backdrop-blur-sm text-white text-sm sm:text-base border border-white/50 rounded-lg"
-            onClick={() => navigate("/recap")}
+            onClick={() => navigate("/playground")}
           >
             <ArrowLeft /> Previous page
           </button>

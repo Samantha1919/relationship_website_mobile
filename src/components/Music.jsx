@@ -97,6 +97,7 @@ function Music() {
               }}
               drag
               dragConstraints={containerRef} // Adjust to container size
+              //dragMomentum={false} // evite que lobjet glisse au toucher
             >
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 flex items-center gap-4 w-56 h-[4rem]">
                 <div className="w-12 h-12 flex-shrink-0">

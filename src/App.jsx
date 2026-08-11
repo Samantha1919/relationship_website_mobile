@@ -18,7 +18,6 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/playground" element={<Playground />} />
           <Route path="/" element={<Passcode />} />
           <Route path="/question" element={<Question />} />
           <Route path="/timer" element={<Timer />} />
@@ -26,6 +25,7 @@ function App() {
           <Route path="/recap/message" element={<Message />} />
           <Route path="/recap/music" element={<Music />} />
           <Route path="/recap/pictures" element={<Picture />} />
+          <Route path="/playground" element={<Playground />} />
           <Route path="/letter" element={<Letter />} />
           <Route path="/closing" element={<Closing />} />
         </Routes>

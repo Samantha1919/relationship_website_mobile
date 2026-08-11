@@ -13,11 +13,14 @@ import {
 import { motion } from "motion/react";
 import "./Playground.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "./icons";
 
 // plus tu veux descendre plus tu augmentes le top
 // plus tu veux mettre a droite plus tu augmentes le left et dcp tu le baisses pr aller a gauche
 
 function Playground() {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const [canDragItems, setCanDragItems] = useState(true);
 
@@ -32,7 +35,7 @@ function Playground() {
       img: biscuit,
       foodName: "biscuit",
       left: "20%",
-      top: "73%",
+      top: "39%",
     },
     {
       img: mochis,
@@ -55,19 +58,19 @@ function Playground() {
     {
       img: dango,
       foodName: "dango",
-      left: "70%",
-      top: "63%",
+      left: "90%",
+      top: "23%",
     },
     {
       img: mochi,
       foodName: "mochi",
-      left: "65%",
-      top: "74%",
+      left: "75%",
+      top: "4%",
     },
     {
       img: milk,
       foodName: "milk",
-      left: "85%",
+      left: "75%",
       top: "67%",
     },
   ];
@@ -126,6 +129,21 @@ function Playground() {
       </h1>
 
       <h2 className="text-center">Put the {foodChoosen} in basket</h2>
+
+      <div className="flex justify-around w-full testSvgDiv">
+        <button
+          className="px-4 py-2 flex justify-center items-center  gap-2 text-black text-sm sm:text-base border border-black/50 rounded-lg"
+          onClick={() => navigate("/recap")}
+        >
+          <ArrowLeft /> Previous page
+        </button>
+        <button
+          className="px-4 py-2 flex justify-center items-center  gap-2 text-black text-sm sm:text-base border border-black/50 rounded-lg"
+          onClick={() => navigate("/letter")}
+        >
+          Next page <ArrowRight />
+        </button>
+      </div>
 
       <div className="buttonReloadDiv">
         <button id="reloadBtn" className="hidden" onClick={refreshPage}>

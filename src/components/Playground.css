@@ -1,6 +1,7 @@
 .buttonReloadDiv {
   display: flex;
   justify-content: center;
+  margin-top: 14px;
 }
 
 #reloadBtn {
@@ -15,6 +16,12 @@
   line-height: 20px;
 }
 
-#reloadBtn:focus {
+#reloadBtn:hover {
   background-color: #f082ac;
+}
+
+.testSvgDiv {
+  svg path {
+    fill: black;
+  }
 }
