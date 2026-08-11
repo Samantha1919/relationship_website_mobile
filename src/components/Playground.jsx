@@ -11,17 +11,20 @@ import {
   milk,
 } from "../assets";
 import { motion } from "motion/react";
+import "./Playground.css";
+import { useState } from "react";
 
 // plus tu veux descendre plus tu augmentes le top
 // plus tu veux mettre a droite plus tu augmentes le left et dcp tu le baisses pr aller a gauche
 
 function Playground() {
   const containerRef = useRef(null);
+  const [canDragItems, setCanDragItems] = useState(true);
 
   const foods = [
     {
       img: iceCream,
-      foodName: "ice cream",
+      foodName: "ice-cream",
       left: "5%",
       top: "2%",
     },
@@ -69,7 +72,12 @@ function Playground() {
     },
   ];
 
-  const foodChoosen = foods[Math.floor(Math.random() * foods.length)].foodName;
+  const foodChoosen = foods[Math.floor(Math.random() * foods.length)].foodName; // genre un num aleatoire entre 0 et 7 et selectionne le foodName de cet index
+
+  // enfaite ca cest en js ducoup forcement cv pas marcher
+  // const button = document.createElement("button");
+  // document.body.appendChild(button);
+  // button.innerText = "Can you click me?";
 
   function lacheLobjet(event, info) {
     let basketImg = document.getElementById("testid"); // recupere lelement du panier
@@ -89,16 +97,26 @@ function Playground() {
     ) {
       console.log("à l'intérieur"); // si lelement est a linterieur du panier
       console.log("event target", event.target.src);
-      let sourceImage = event.target.src;
-      console.log("source", sourceImage);
+
+      let sourceImage = event.target.src; // exemple de ce que ca retourne http://localhost:5173/src/assets/ice-cream.png  / console.log("source", sourceImage);
+
       if (sourceImage.includes(foodChoosen)) {
-        console.log("OK"); // si lelement est le bon, la bonne nourriture
+        // compare si le nom de limage inclut foodChoosen
+        const reloadBtn = document.getElementById("reloadBtn"); // si lelement est le bon, la bonne nourriture
+
+        reloadBtn.classList.toggle("hidden"); // enleve la classe hidden et ducoup le met en visible
+
+        setCanDragItems(false);
       } else {
         console.log("Pas le bon element"); // si lelement nest pas le bon, pas la bonne nourriture
       }
     } else {
       console.log("à l'extérieur"); // si lelement est a lexterieur du panier
     }
+  }
+
+  function refreshPage() {
+    window.location.reload();
   }
 
   return (
@@ -108,6 +126,12 @@ function Playground() {
       </h1>
 
       <h2 className="text-center">Put the {foodChoosen} in basket</h2>
+
+      <div className="buttonReloadDiv">
+        <button id="reloadBtn" className="hidden" onClick={refreshPage}>
+          Play again !
+        </button>
+      </div>
 
       <div
         ref={containerRef}
@@ -120,12 +144,12 @@ function Playground() {
         {foods.map((img, index) => (
           <motion.div
             key={index}
-            className="absolute" // Use absolute positioning
+            className="absolute motionDiv" // Use absolute positioning
             style={{
               left: img.left,
               top: img.top,
             }}
-            drag
+            drag={canDragItems} //au debut elle est a true ducoup tu peux, quand tu trouves le bon objet ca la chnage a false
             dragConstraints={containerRef} // Adjust to container size
             dragMomentum={false} // evite que lobjet glisse au toucher
             onDragEnd={lacheLobjet} // quand tu laches ta souris ca appelle cette fonction
