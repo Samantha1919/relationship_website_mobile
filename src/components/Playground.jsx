@@ -12,8 +12,8 @@ import {
 } from "../assets";
 import { motion } from "motion/react";
 
-// plus tu veux descendre plsu tu augemntes le top
-// plus tu. veux mettre a droite plus tu augmentes le left et dcp tu le. baisses pr aller a gauche
+// plus tu veux descendre plus tu augmentes le top
+// plus tu veux mettre a droite plus tu augmentes le left et dcp tu le baisses pr aller a gauche
 
 function Playground() {
   const containerRef = useRef(null);
@@ -71,9 +71,35 @@ function Playground() {
 
   const foodChoosen = foods[Math.floor(Math.random() * foods.length)].foodName;
 
-  // si la foods.img = foodChoosen ducoup cest la food.img qu'il faut deplacer et regarder si elle est en contact avec le panier
+  function lacheLobjet(event, info) {
+    let basketImg = document.getElementById("testid"); // recupere lelement du panier
+    let basketPosition = basketImg.getBoundingClientRect(); // recupere la position du panier
 
-  //  let basket = document.getElementById();
+    // console.log("basket", basketImg); log de limage du panier
+    console.log("basketpos", basketImg.getBoundingClientRect()); // log de la position du panier
+    console.log("event", event); // plein dinfos sur LIMAGE
+    console.log("info", info); // plein dinfos sur la POSITION
+    console.log(info.point.x, info.point.y); // position de limage nourriture quon déplace
+
+    if (
+      info.point.x > basketPosition.x &&
+      info.point.x < basketPosition.x + basketPosition.width &&
+      info.point.y > basketPosition.y &&
+      info.point.y < basketPosition.y + basketPosition.height
+    ) {
+      console.log("à l'intérieur"); // si lelement est a linterieur du panier
+      console.log("event target", event.target.src);
+      let sourceImage = event.target.src;
+      console.log("source", sourceImage);
+      if (sourceImage.includes(foodChoosen)) {
+        console.log("OK"); // si lelement est le bon, la bonne nourriture
+      } else {
+        console.log("Pas le bon element"); // si lelement nest pas le bon, pas la bonne nourriture
+      }
+    } else {
+      console.log("à l'extérieur"); // si lelement est a lexterieur du panier
+    }
+  }
 
   return (
     <div className="max-h-screen bg-[#fbf1fb] relative">
@@ -88,7 +114,7 @@ function Playground() {
         className="relative min-h-screen rounded-lg overflow-hidden mt-8 mb-12"
       >
         <div className="flex justify-center mt-12">
-          <img src={basket} className=" w-[700px] h-[700px]" />
+          <img src={basket} className=" w-[700px] h-[700px]" id="testid" />
         </div>
 
         {foods.map((img, index) => (
@@ -101,6 +127,8 @@ function Playground() {
             }}
             drag
             dragConstraints={containerRef} // Adjust to container size
+            dragMomentum={false} // evite que lobjet glisse au toucher
+            onDragEnd={lacheLobjet} // quand tu laches ta souris ca appelle cette fonction
           >
             <img
               src={img.img}
