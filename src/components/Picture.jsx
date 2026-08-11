@@ -1,5 +1,5 @@
 import React from "react";
-import { picture } from "../assets";
+import { basket, mochi } from "../assets";
 import Carousel from "./Carousel";
 import { ImageCard } from "./ImageCard";
 import { ArrowLeft } from "./icons";
@@ -10,16 +10,14 @@ function Picture() {
 
   const pictures = [
     {
-      Image: picture,
-      title: "September 3, 2024",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, possimus!",
+      Image: basket,
+      title: "test",
+      description: "jaime les chats",
     },
     {
-      Image: picture,
-      title: "September 3, 2024",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, possimus!",
+      Image: mochi,
+      title: "test",
+      description: "jaime les chats",
     },
   ];
   return (

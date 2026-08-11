@@ -18,58 +18,62 @@ import { motion } from "motion/react";
 function Playground() {
   const containerRef = useRef(null);
 
-  const images = [
+  const foods = [
     {
       img: iceCream,
-      name: "ice cream",
+      foodName: "ice cream",
       left: "5%",
       top: "2%",
     },
     {
       img: biscuit,
-      name: "biscuit",
+      foodName: "biscuit",
       left: "20%",
       top: "73%",
     },
     {
       img: mochis,
-      name: "mochis",
+      foodName: "mochis",
       left: "10%",
       top: "25%",
     },
     {
       img: kitkat,
-      name: "kitkat",
+      foodName: "kitkat",
       left: "75%",
       top: "38%",
     },
     {
       img: macaron,
-      name: "macaron",
+      foodName: "macaron",
       left: "15%",
       top: "60%",
     },
     {
       img: dango,
-      name: "dango",
+      foodName: "dango",
       left: "70%",
       top: "63%",
     },
     {
       img: mochi,
-      name: "mochi",
+      foodName: "mochi",
       left: "65%",
       top: "74%",
     },
     {
       img: milk,
-      name: "milk",
+      foodName: "milk",
       left: "85%",
       top: "67%",
     },
   ];
 
-  const name = images[Math.floor(Math.random() * images.length)].name;
+  const foodChoosen = foods[Math.floor(Math.random() * foods.length)].foodName;
+
+  // si la foods.img = foodChoosen ducoup cest la food.img qu'il faut deplacer et regarder si elle est en contact avec le panier
+
+  //  let basket = document.getElementById();
 
   return (
     <div className="max-h-screen bg-[#fbf1fb] relative">
@@ -77,7 +81,7 @@ function Playground() {
         Playground time !
       </h1>
 
-      <h2 className="text-center">Put the {name} in basket</h2>
+      <h2 className="text-center">Put the {foodChoosen} in basket</h2>
 
       <div
         ref={containerRef}
@@ -87,7 +91,7 @@ function Playground() {
           <img src={basket} className=" w-[700px] h-[700px]" />
         </div>
 
-        {images.map((img, index) => (
+        {foods.map((img, index) => (
           <motion.div
             key={index}
             className="absolute" // Use absolute positioning
