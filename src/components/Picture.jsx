@@ -1,5 +1,4 @@
-import React from "react";
-import { basket, mochi } from "../assets";
+import { cells, max, mochi } from "../assets";
 import Carousel from "./Carousel";
 import { ImageCard } from "./ImageCard";
 import { ArrowLeft } from "./icons";
@@ -10,7 +9,12 @@ function Picture() {
 
   const pictures = [
     {
-      Image: basket,
+      Image: cells,
+      title: "test",
+      description: "jaime les chats",
+    },
+    {
+      Image: max,
       title: "test",
       description: "jaime les chats",
     },

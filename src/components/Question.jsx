@@ -11,17 +11,18 @@ function Question() {
 
   // Customize your own Trending Searches
   const trends = [
-    "Why is my bf so cute?",
-    "Why does Rheina love him more?",
-    `Rheina's birthdate (coz her bf forgets)`,
-    "test",
+    "what 67 means",
+    "comment cuire un oeuf a la coque ???",
+    "Google",
+    "jenna ortega pieds",
   ];
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (
-      searchQuery.toLowerCase() === "how long have we been together?" ||
-      searchQuery.toLowerCase() === "how long have we been together"
+      searchQuery.toLowerCase() ===
+        "depuis combien de temps on est ensemble?" ||
+      searchQuery.toLowerCase() === "depuis combien de temps on est ensemble"
     ) {
       // ct tlt vrai avant mais quest ce ca change js plus
       navigate("/timer");
@@ -89,7 +90,10 @@ function Question() {
             </div>
           </form>
           <div className="mt-10  px-5 text-white/50">
-            <p>Pro tip: try searching "How long have we been together?" ;)</p>
+            <p>
+              Pro tip: try searching "Depuis combien de temps on est ensemble?"
+              ;)
+            </p>
           </div>
         </div>
       )}

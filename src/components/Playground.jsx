@@ -130,6 +130,8 @@ function Playground() {
 
       <h2 className="text-center">Put the {foodChoosen} in basket</h2>
 
+      <div>Score : </div>
+
       <div className="flex justify-around w-full testSvgDiv">
         <button
           className="px-4 py-2 flex justify-center items-center  gap-2 text-black text-sm sm:text-base border border-black/50 rounded-lg"

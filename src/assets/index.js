@@ -18,6 +18,8 @@ import biscuit from "./biscuit.png";
 import mochi from "./mochi.png";
 import dango from "./dango.png";
 import milk from "./milk.png";
+import cells from "./cells.jpg";
+import max from "./max.jpg";
 
 // page ou tu exportes les images avec juste un nom pour pouvoir les utiliser + facilement
 
@@ -42,4 +44,6 @@ export {
   mochi,
   dango,
   milk,
+  cells,
+  max,
 };
