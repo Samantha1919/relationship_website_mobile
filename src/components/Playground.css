@@ -4,7 +4,7 @@
   margin-top: 14px;
 }
 
-#reloadBtn {
+.reloadBtn {
   background-color: #ea4c89;
   border-radius: 8px;
   border-style: none;
@@ -14,9 +14,10 @@
   padding: 15px;
   text-align: center;
   line-height: 20px;
+  visibility: hidden;
 }
 
-#reloadBtn:hover {
+.reloadBtn:hover {
   background-color: #f082ac;
 }
 

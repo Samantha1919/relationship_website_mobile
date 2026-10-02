@@ -19,10 +19,11 @@ import { ArrowLeft, ArrowRight } from "./icons";
 // plus tu veux descendre plus tu augmentes le top
 // plus tu veux mettre a droite plus tu augmentes le left et dcp tu le baisses pr aller a gauche
 
-function Playground() {
+const Playground = () => {
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const [canDragItems, setCanDragItems] = useState(true);
+  const [score, setScore] = useState(0);
 
   const foods = [
     {
@@ -74,13 +75,10 @@ function Playground() {
       top: "67%",
     },
   ];
-
-  const foodChoosen = foods[Math.floor(Math.random() * foods.length)].foodName; // genre un num aleatoire entre 0 et 7 et selectionne le foodName de cet index
-
-  // enfaite ca cest en js ducoup forcement cv pas marcher
-  // const button = document.createElement("button");
-  // document.body.appendChild(button);
-  // button.innerText = "Can you click me?";
+  // obligé de le mettre en bas pr pouvoir accéder a food le tableau dobjets
+  const [foodChoosen, setFoodChoosen] = useState(
+    foods[Math.floor(Math.random() * foods.length)].foodName, // pk il met une virgule
+  ); // genere un num aleatoire entre 0 et 7 et selectionne le foodName de cet index
 
   function lacheLobjet(event, info) {
     let basketImg = document.getElementById("testid"); // recupere lelement du panier
@@ -103,12 +101,12 @@ function Playground() {
 
       let sourceImage = event.target.src; // exemple de ce que ca retourne http://localhost:5173/src/assets/ice-cream.png  / console.log("source", sourceImage);
 
+      // compare si le nom de limage inclut foodChoosen
       if (sourceImage.includes(foodChoosen)) {
-        // compare si le nom de limage inclut foodChoosen
+        setScore(score + 1);
+        console.log("Score" + score);
         const reloadBtn = document.getElementById("reloadBtn"); // si lelement est le bon, la bonne nourriture
-
-        reloadBtn.classList.toggle("hidden"); // enleve la classe hidden et ducoup le met en visible
-
+        reloadBtn.style.visibility = "visible"; // enleve la classe hidden et ducoup le met en visible
         setCanDragItems(false);
       } else {
         console.log("Pas le bon element"); // si lelement nest pas le bon, pas la bonne nourriture
@@ -119,7 +117,10 @@ function Playground() {
   }
 
   function refreshPage() {
-    window.location.reload();
+    const reloadBtn = document.getElementById("reloadBtn");
+    reloadBtn.style.visibility = "hidden";
+    setCanDragItems(true);
+    setFoodChoosen(foods[Math.floor(Math.random() * foods.length)].foodName);
   }
 
   return (
@@ -130,7 +131,7 @@ function Playground() {
 
       <h2 className="text-center">Put the {foodChoosen} in basket</h2>
 
-      <div>Score : </div>
+      <div>Score : {score} </div>
 
       <div className="flex justify-around w-full testSvgDiv">
         <button
@@ -148,7 +149,7 @@ function Playground() {
       </div>
 
       <div className="buttonReloadDiv">
-        <button id="reloadBtn" className="hidden" onClick={refreshPage}>
+        <button id="reloadBtn" className="reloadBtn" onClick={refreshPage}>
           Play again !
         </button>
       </div>
@@ -186,6 +187,6 @@ function Playground() {
       <div />
     </div>
   );
-}
+};
 
 export default Playground;
